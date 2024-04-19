@@ -1,0 +1,8 @@
+#parallax{
+  background-image: url("https://media.discordapp.net/attachments/904748872423841803/1230948388774740041/9892505_4278222.png?ex=66240985&is=6622b805&hm=9da4361f6b4c1429732c55073cc7dfe1db5cb2d091b9d4443dd83803ae059b33&=&format=webp&quality=lossless&width=2150&height=1228");
+
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
