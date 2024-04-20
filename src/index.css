@@ -3,5 +3,11 @@
 @tailwind utilities;
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
+}
+
+.parallax {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: repeat;
 }
