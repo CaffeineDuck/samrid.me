@@ -5,9 +5,3 @@
 html {
   scroll-behavior: smooth;
 }
-
-.parallax {
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: repeat;
-}
