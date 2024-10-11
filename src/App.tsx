@@ -5,8 +5,9 @@ import { Chevrolet } from "./components/chevrolet";
 import { MyWork } from "./components/my-work";
 import { MyBlogs } from "./components/my-blogs";
 import { Footer } from "./components/footer";
+import { BlogProps } from "./components/blog";
 
-import parallaxImage from "./assets/parallax.jpeg";
+import parallaxImage from "./assets/layer.svg";
 
 const projects: ProjectProps[] = [
   {
@@ -43,16 +44,54 @@ const projects: ProjectProps[] = [
   },
 ];
 
+const blogPosts: BlogProps[] = [
+  {
+    date: new Date("2023-04-07"),
+    title: "Data Race In Python Despite GIL?",
+    description: "Data Race While The Definite Definition Of Data Race Differs With The Concurrency Model And The Language, It's Safe To Assume That Data Race Is When 2...",
+    link: "https://blog.samrid.me/data-race-in-python-despite-gil",
+    tags: ["Python", "Concurrency", "GIL", "Data Race"]
+  },
+  {
+    date: new Date("2022-01-19"),
+    title: "How To Convert The Type Of Function's Arguments In Python At Runtime?",
+    description: "Converting The Type According To Type Hints In Python · Introduction Most Of Us Have Run Into A Situation Where We Have To Change The Type Of A Parameter...",
+    link: "https://blog.samrid.me/how-to-convert-the-type-of-functions-arguments-in-python-at-runtime",
+    tags: ["Python", "Type Conversion", "Runtime", "Function Arguments"]
+  },
+  {
+    date: new Date("2022-01-18"),
+    title: "Handling The Fear Of Asynchronous File Handling In Python",
+    description: "File Handling In Python With Aiofiles And Asyncio · Introduction Let's Face It, The Clock Speed Of Our CPU Doesn't Really Affect The Performance Of...",
+    link: "https://blog.samrid.me/handling-the-fear-of-asynchronous-file-handling-in-python",
+    tags: ["Python", "Asynchronous", "File Handling", "aiofiles", "asyncio"]
+  },
+  {
+    date: new Date("2022-01-17"),
+    title: "How To Save Python Objects In Redis?",
+    description: "Saving Complex Python Objects In Redis With Aioredis And Pickle · Introduction In This Article, You'll Learn About Pickle, Redis, Why You Would Want To...",
+    link: "https://blog.samrid.me/how-to-save-python-objects-in-redis",
+    tags: ["Python", "Redis", "Pickle", "aioredis", "Object Serialization"]
+  },
+  {
+    date: new Date("2021-06-14"),
+    title: "Creating A Python Module For Nepal Stock Exchange API",
+    description: "Bitter-Sweet Experience Of Creating An Async PyPi Module · Introduction Nepal Stock Exchange Has Been Gaining A Lot Of Traction Lately. I Was Interested...",
+    link: "https://blog.samrid.me/creating-a-python-module-for-nepal-stock-exchange-api",
+    tags: ["Python", "API", "Nepal Stock Exchange", "PyPi", "Async"]
+  }
+];
+
 function App() {
   return (
     <>
       <Hero />
       <Chevrolet href="#projects" />
 
-      {/* <Parallax backgroundUrl="https://media.discordapp.net/attachments/904748872423841803/1230948388774740041/9892505_4278222.png?ex=66240985&is=6622b805&hm=9da4361f6b4c1429732c55073cc7dfe1db5cb2d091b9d4443dd83803ae059b33&=&format=webp&quality=lossless&width=2150&height=1228" /> */}
       <Parallax backgroundUrl={parallaxImage} />
       <MyWork projects={projects} />
-      <div class="h-64 relative flex justify-center items-center mt-4 mb-16 from-primary-500 to-primary-300 bg-gradient-to-br ">
+
+      <div class="h-56 md:h-48 relative flex justify-center items-center mt-4 mb-16 from-primary-500 to-primary-300 bg-gradient-to-br ">
         <svg
           class="absolute top-6 start-8 size-16 opacity-80 text-gray-100 "
           width="16"
@@ -67,14 +106,13 @@ function App() {
             fill="currentColor"
           ></path>
         </svg>
-        <h1 class="text-center text-white text-xl md:text-3xl my-1 font-extralight tracking-wider">
-          I LIKE TO PLAY WITH <span class="font-bold">SPECIAL SAND </span>
-          CAPABLE OF DOING{" "}
-          <span class="underline underline-offset-8">MATHS.</span>
+        <h1 class="text-center text-white text-xl md:text-3xl my-1 font-extralight tracking-wider uppercase">
+          I like to play with <span class="font-bold">special sand</span>{" "}
+          capable of doing{" "}
+          <span class="underline underline-offset-8">maths</span>
         </h1>
       </div>
-      <MyBlogs />
-      <Parallax backgroundUrl="https://media.discordapp.net/attachments/904748872423841803/1230992271529476227/image.png?ex=663555e4&is=6622e0e4&hm=11b8a7876a110f83fcb2c10d50ac97f2728eed6f3e0c1029d31334dac57d7019&=&format=webp&quality=lossless&width=2268&height=556" />
+      <MyBlogs blogs={blogPosts} />
       <Footer />
     </>
   );

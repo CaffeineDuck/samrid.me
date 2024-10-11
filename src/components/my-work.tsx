@@ -12,19 +12,13 @@ export const MyWork = ({ projects }: MyWorkProps) => {
         My <span class="text-primary-600">Open-Source Work</span>
       </h1>
       <article class="p-10">
-        <div class="flex flex-col gap-5">
-          {projects.slice(0, 4).map(
-            (project, index) =>
-              index % 2 === 0 && (
-                <div class="flex flex-col md:flex-row gap-5">
-                  <Project {...project} />
-                  {projects[index + 1] && <Project {...projects[index + 1]} />}
-                </div>
-              )
-          )}
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mx-auto md:px-24 w-full">
+          {projects.slice(0, 4).map((project) => (
+            <Project {...project} />
+          ))}
         </div>
         <div class="mt-12 flex md:justify-end mx-auto justify-center">
-        <Button link="https://github.com/caffeineduck" cta="More Projects"/>
+          <Button link="https://github.com/caffeineduck" cta="More Projects" />
         </div>
       </article>
     </section>

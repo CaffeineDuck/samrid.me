@@ -1,24 +1,25 @@
 import { Blog } from "./blog";
 import { Button } from "./button";
+import { BlogProps } from './blog.tsx'
 
-export const MyBlogs = () => {
+interface MyBlogsProps {
+  blogs: BlogProps[];
+}
+
+export const MyBlogs = (props: MyBlogsProps) => {
   return (
-    <div class="relative">
-      
-      <section class="md:h-[100vh] mx-3 relative" id="blogs">
-        <h1 class="tracking-[0.5px] text-3xl md:text-5xl text-center mb-4 text-black font-bold">
-          My <span class="text-red-600">Blogs</span>
+    <div className="relative py-10">
+      <section className="mx-3 relative" id="blogs">
+        <h1 className="tracking-[0.5px] text-3xl md:text-5xl text-center mb-10 text-black font-bold">
+          My <span className="text-red-600">Blogs</span>
         </h1>
-        <div class="px-10 pt-10 pb-5 mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-          <Blog />
-          <Blog />
-          <Blog />
-          <Blog />
-          <Blog />
-          <Blog />
+        <div className="px-4 md:px-10 mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:mt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+          {props.blogs.slice(0, 6).map((blogProp, index) => (
+            <Blog key={index} {...blogProp} />
+          ))}
         </div>
-        <div class="mt-12 flex md:justify-end mx-auto justify-center">
-          <Button link="https://github.com/caffeineduck" cta="Read More" />
+        <div className="mt-16 flex justify-center md:justify-end px-4 md:px-10">
+          <Button link="https://blog.samrid.me" cta="Read More" />
         </div>
       </section>
     </div>

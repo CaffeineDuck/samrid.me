@@ -23,12 +23,12 @@ export const Project = (props: ProjectProps) => {
   const githubRepoUrl = `${githubProfileUrl}/${props.repositoryName}`
 
   return (
-    <div class="banner-image border transition-all hover:shadow-md min-h-[220px] md:min-h-[280px]  rounded-lg p-5 md:p-10 flex-1 flex flex-col justify-between">
+    <div class="banner-image max-w-4xl md:min-w-3xl border transition-all hover:shadow-md min-h-[220px] md:min-h-[280px]  rounded-lg p-5 md:p-10 flex-1 flex flex-col justify-between">
       <div class="top-content relative">
         <img
           src={PROJECT_IMAGES[props.projectType]}
           alt=""
-          class="w-16 hidden lg:block absolute right-0"
+          class="w-16 hidden xl:block absolute right-0"
         />
         <h1 class="text-xl lg:text-3xl">
           <span>
