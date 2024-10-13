@@ -7,7 +7,7 @@ import { MyBlogs } from "./components/my-blogs";
 import { Footer } from "./components/footer";
 import { BlogProps } from "./components/blog";
 
-import parallaxImage from "./assets/layer.svg";
+const parallaxImage = '/layer.svg';
 
 const projects: ProjectProps[] = [
   {
